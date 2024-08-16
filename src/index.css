@@ -34,6 +34,7 @@ ol {
 img {
   display: block;
   max-width: 100%;
+  object-fit: cover;
 }
 
 .container {
@@ -41,4 +42,9 @@ img {
   width: 100%;
   padding: 16px 16px;
   max-width: 1440px;
+}
+
+svg {
+  stroke: black;
+  fill: white;
 }

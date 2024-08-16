@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllCars } from './operations';
+import { fetchAllCars, fetchDetailCar } from './operations';
 
 const initialState = {
   cars: [],
+  selectedCar: null,
   loading: false,
   error: null,
 };
@@ -20,6 +21,11 @@ const handleErrorState = (state, action) => {
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
+  reducers: {
+    clearSelectedCar(state) {
+      state.selectedCar = null;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchAllCars.pending, state => {
@@ -34,11 +40,21 @@ const carsSlice = createSlice({
         );
         state.cars = [...state.cars, ...filteredNewCars];
       })
-      .addCase(fetchAllCars.rejected),
-      (state, action) => {
+      .addCase(fetchAllCars.rejected, (state, action) => {
         handleErrorState(state, action);
-      };
+      })
+      .addCase(fetchDetailCar.pending, state => {
+        handlePendingState(state);
+      })
+      .addCase(fetchDetailCar.fulfilled, (state, action) => {
+        state.loading = false;
+        state.selectedCar = action.payload;
+      })
+      .addCase(fetchDetailCar.rejected, (state, action) => {
+        handleErrorState(state, action);
+      });
   },
 });
 
+export const { clearSelectedCar } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
