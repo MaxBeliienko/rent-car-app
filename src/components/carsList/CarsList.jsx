@@ -1,7 +1,9 @@
+import styles from './CarsList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCars } from '../../redux/cars/selectors';
 import { fetchAllCars } from '../../redux/cars/operations';
 import CarItem from '../carItem/CarItem';
+import Button from '../button/Button';
 import { useEffect, useState } from 'react';
 
 const CarsList = () => {
@@ -24,7 +26,7 @@ const CarsList = () => {
 
   return (
     <>
-      <ul>
+      <ul className={styles['cars-list-container']}>
         {visibleCars.map(car => {
           const { _id } = car;
           return (
@@ -34,7 +36,7 @@ const CarsList = () => {
           );
         })}
       </ul>
-      <button onClick={handleLoadMore}>Load more</button>
+      <Button text="Load more" variant="load-more" onClick={handleLoadMore} />
     </>
   );
 };

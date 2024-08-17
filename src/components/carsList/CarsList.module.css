@@ -1,0 +1,21 @@
+.cars-list-container {
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .cars-list-container {
+    max-width: 768px;
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .cars-list-container {
+    max-width: 888px;
+    gap: 32px;
+  }
+}
