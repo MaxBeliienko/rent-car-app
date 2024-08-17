@@ -1,6 +1,5 @@
 import styles from './CarsList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-// import { selectCars } from '../../redux/cars/selectors';
 import { selectFilteredCars } from '../../redux/filters/selectors';
 import { fetchAllCars } from '../../redux/cars/operations';
 import CarItem from '../carItem/CarItem';

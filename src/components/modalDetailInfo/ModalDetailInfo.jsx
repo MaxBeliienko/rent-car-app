@@ -13,19 +13,7 @@ const ModalDetailInfo = ({ car }) => {
     return <Loader />;
   }
 
-  const {
-    name,
-    gallery,
-    price,
-    details,
-    rating,
-    reviews,
-    location,
-    description,
-    adults,
-    transmission,
-    engine,
-  } = car;
+  const { name, gallery, price, rating, reviews, location, description } = car;
   return (
     <div>
       <div className={styles['modals-sub-container']}>

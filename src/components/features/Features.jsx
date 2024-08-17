@@ -1,8 +1,7 @@
 import styles from './Features.module.css';
 
 const Features = ({ car }) => {
-  const { adults, form, details, length, width, height, tank, consumption } =
-    car;
+  const { form, length, width, height, tank, consumption } = car;
   return (
     <div className={styles['vehicle-container']}>
       <h2>Vehicle details</h2>

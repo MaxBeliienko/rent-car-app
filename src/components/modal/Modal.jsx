@@ -32,7 +32,6 @@ const Modal = ({ isOpen, onClose, children }) => {
       document.body.classList.remove(styles['no-scroll']);
     }
 
-    // Прибираємо клас при розмонтуванні компонента
     return () => {
       document.body.classList.remove(styles['no-scroll']);
     };

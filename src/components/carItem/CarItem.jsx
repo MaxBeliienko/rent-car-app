@@ -1,6 +1,6 @@
 import styles from './CarItem.module.css';
 import sprite from '../../img/sprite.svg';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../modal/Modal';
 import Button from '../button/Button';
@@ -35,19 +35,7 @@ const CarItem = ({ car }) => {
     dispatch(clearSelectedCar());
   };
 
-  const {
-    name,
-    gallery,
-    price,
-    details,
-    rating,
-    reviews,
-    location,
-    description,
-    adults,
-    transmission,
-    engine,
-  } = car;
+  const { name, gallery, price, rating, reviews, location, description } = car;
 
   return (
     <div className={styles['car-item-container']}>
@@ -92,14 +80,6 @@ const CarItem = ({ car }) => {
             {description} <span className={styles.tooltip}>{description}</span>
           </p>
         </div>
-        {/* <ul>
-          <li>{adults} adults</li>
-          <li>{transmission}</li>
-          <li>{engine}</li>
-          {details.kitchen > 0 && <li>Kitchen</li>}
-          <li>{details.beds} beds</li>
-          {details.airConditioner > 0 && <li>AC</li>}
-        </ul> */}
         <Button text="Show more" variant="show-more" onClick={openModal} />
         <Modal isOpen={modalOpen} onClose={closeModal}>
           <ModalDetailInfo car={selectedCar} />
