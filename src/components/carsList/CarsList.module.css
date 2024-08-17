@@ -6,6 +6,12 @@
   margin-bottom: 50px;
 }
 
+.cars-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
   .cars-list-container {
     max-width: 768px;

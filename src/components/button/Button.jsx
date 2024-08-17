@@ -1,10 +1,10 @@
 import styles from './Button.module.css';
 
-const Button = ({ text, variant = 'first', onClick }) => {
+const Button = ({ text, type = 'button', variant = 'first', onClick }) => {
   const buttonClass = `${styles.button} ${styles[variant]}`;
 
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button type={type} className={buttonClass} onClick={onClick}>
       {text}
     </button>
   );

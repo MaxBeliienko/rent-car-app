@@ -1,0 +1,33 @@
+.vehicle-container {
+  padding: 5px;
+  width: 375px;
+}
+
+.vehicle-container h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 44px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid black;
+}
+
+.vehicle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vehicle-list > li {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33333;
+}
+
+@media screen and (min-width: 1440px) {
+  .vehicle-container {
+    width: 100%;
+  }
+}

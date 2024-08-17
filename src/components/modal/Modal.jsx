@@ -25,6 +25,19 @@ const Modal = ({ isOpen, onClose, children }) => {
     }
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add(styles['no-scroll']);
+    } else {
+      document.body.classList.remove(styles['no-scroll']);
+    }
+
+    // Прибираємо клас при розмонтуванні компонента
+    return () => {
+      document.body.classList.remove(styles['no-scroll']);
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 998;
 }
 
 .modal {
@@ -16,9 +16,11 @@
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 980px;
   width: 100%;
-  z-index: 1001;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 999;
 }
 
 .closeButton {
@@ -29,4 +31,8 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

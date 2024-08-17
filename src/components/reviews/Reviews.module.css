@@ -1,0 +1,45 @@
+.review-item {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    'a n . . .'
+    'a r . . .'
+    '. . . . .'
+    'd d d d d'
+    'd d d d d';
+  margin-bottom: 24px;
+}
+
+.avatar {
+  grid-area: a;
+}
+
+.name {
+  grid-area: n;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: #101828;
+}
+
+.stars-container {
+  grid-area: r;
+  display: flex;
+  gap: 2px;
+  height: 30px;
+}
+
+.comment {
+  grid-area: d;
+}
+
+.filled-star {
+  fill: #ffc531;
+  stroke: transparent;
+}
+
+.empty-star {
+  fill: transparent;
+  stroke: #ffc531;
+}

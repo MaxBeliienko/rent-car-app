@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styles from './homePageComponent.module.css';
+import gallery1 from '../../img/home-gallery1.jpg';
+import gallery2 from '../../img/home-gallery2.jpg';
+import gallery3 from '../../img/home-gallery3.jpg';
 
 const HomePageComponent = () => {
   return (
@@ -20,13 +23,13 @@ const HomePageComponent = () => {
         <h2 className={styles.subtitle}>Our Campers</h2>
         <ul className={styles.gallery}>
           <li>
-            <img src="../../img/home-gallery1.jpg" alt="Camper photo" />
+            <img src={gallery1} alt="Camper photo" />
           </li>
           <li>
-            <img src="../../img/home-gallery2.jpg" alt="Camper photo" />
+            <img src={gallery2} alt="Camper photo" />
           </li>
           <li>
-            <img src="../../img/home-gallery3.jpg" alt="Camper photo" />
+            <img src={gallery3} alt="Camper photo" />
           </li>
         </ul>
       </section>
